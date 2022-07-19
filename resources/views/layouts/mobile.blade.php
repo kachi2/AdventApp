@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
         <meta name="keywords" content="crypto, Trading, Cryptocurrency, Cryptocurrency Trading, Investments, Trading comapany, Brokers, Bitcoin, Bitcoin trading">
-        <meta name="description" content="Advent Capital is a highly trusted crypto Trading comapany, helping millions of individuals and firms across the globe to safely Trade and earn more with crypto currency.">
+        <meta name="description" content="Mazeoptions is a highly trusted crypto Trading comapany, helping millions of individuals and firms across the globe to safely Trade and earn more with crypto currency.">
         <meta name="google-site-verification" content="google-site-verification=AwsJpw69QHn5NcP8hJK1Cnzn-SFq3xnnkcGGCtmQ88k" />
     
         <title> @if(isset($title)) {{$title}} @else Home  @endif | {{config('app.name')}}</title>

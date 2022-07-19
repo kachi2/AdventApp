@@ -21,8 +21,10 @@ Route::domain('agency.mazeoption.com')->group(function(){
     //Route::get('/agent/complete/registration', )
     Route::get('/', 'Agency\HomeController@index')->name('agency.index');
 
-    Route::get('/register/agent', 'Agency\AuthController@register')->name('agency.register');
-    Route::post('/register/agent/complete', 'Agency\AuthController@registers')->name('agency.registers');
+    Route::get('/register/agents', 'Agency\AuthController@register')->name('agency.register');
+    Route::post('/register/agent/', 'Agency\AuthController@registers')->name('agency.registers');
+    Route::get('/agency/registration/{id}', 'Agency\AuthController@CompleteRegistration')->name('agency.registration');
+    Route::get('/agency/completion/{id}', 'Agency\AuthController@AccountCompleted')->name('agency.AccountCompleted');
     });
 
 

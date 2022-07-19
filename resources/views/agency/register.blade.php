@@ -27,21 +27,21 @@
                                             <div class="form-group mb-2">
                                                 <label class="form-label" for="useremail">Full Name</label>
                                                 <div class="input-group">                                                                                         
-                                                    <input type="text" class="form-control {{ form_invalid('name') }}" name="name" placeholder="Enter Full Name">
+                                                    <input type="text" class="form-control {{ form_invalid('name') }}" value="{{old('name')}}" name="name" placeholder="Enter Full Name">
                                                     @showError('email')
                                                 </div>                                    
                                             </div><!--end form-group-->
                                             <div class="form-group mb-2">
                                                 <label class="form-label" for="useremail">Email</label>
                                                 <div class="input-group">                                                                                         
-                                                    <input type="email" class="form-control {{ form_invalid('email') }}" name="email" id="useremail" placeholder="Enter Email">
+                                                    <input type="email" class="form-control {{ form_invalid('email') }}" value="{{old('email')}}" name="email" id="useremail" placeholder="Enter Email">
                                                     @showError('email')
                                                 </div>                                    
                                             </div><!--end form-group-->
                                             <div class="form-group mb-2">
                                                 <label class="form-label" for="mo_number">Mobile Number</label>                                            
                                                 <div class="input-group">                                 
-                                                    <input type="text" class="form-control {{ form_invalid('phone')}}" name="phone" id="mo_number" placeholder="Enter Phone Number">
+                                                    <input type="text" class="form-control {{ form_invalid('phone')}}" name="phone" value="{{old('phone')}}" id="mo_number" placeholder="Enter Phone Number">
                                                     @showError('phone')
                                                 </div>                               
                                             </div><!--end form-group-->  

@@ -122,7 +122,7 @@
                                 </div>
                                 <div class="nk-header-app-info">
                                     <span class="sub-text">Think Richly</span>
-                                    <span class="lead-text">AdventCapital</span>
+                                    <span class="lead-text">Mazeoptions</span>
                                 </div>
                             </div>
                             <div class="nk-header-menu is-light">

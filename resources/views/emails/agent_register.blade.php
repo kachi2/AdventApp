@@ -7,7 +7,7 @@
             <tbody>
             <tr>
                 <td style="text-align:center;padding-bottom:15px">
-                    <img style="max-height:50px;width:auto" src="{{asset('logo.png')}}" alt="mazeoptions logo" class="CToWUd">
+                    <img style="" src="https://mazeoptions.com/logo.png" alt="mazeoptions logo" class="CToWUd">
                 </td>
             </tr>
             </tbody>
@@ -15,55 +15,46 @@
                         <table style="width:100%;max-width:620px;margin:0 auto;background-color:#ffffff">
             <tbody>
                     <tr>
-                <td style="padding:10px 30px 10px">
-                    Hello  {{ $data['name'] }},
+                <td>
+                    Dear Mr./Ms.   {{ $data['name'] }},
                 </td>
             </tr>
                     
             <tr>
-                <td style="padding:0 30px">
-                    <p>Welcome to Mazeoptions Agent  </p>
-    <table width="100%">
-    <tbody><tr>
-    <td width="150">Deposit Reference</td>
-    <td width="25">&nbsp;&nbsp;:&nbsp;&nbsp;</td>
-    <td>{{ $deposit->ref }}</td>
-    </tr>
-    <tr>
-    <td width="150">Payment Amount</td>
-    <td width="25">&nbsp;&nbsp;:&nbsp;&nbsp;</td>
-    <td>{{ moneyFormat($deposit->amount, 'USD') }} </td>
-    </tr>
-    <tr>
-    <td width="150">Profit</td>
-    <td width="25">&nbsp;&nbsp;:&nbsp;&nbsp;</td>
-    <td> {{ moneyFormat($deposit->profit, 'USD') }}</td>
-    </tr>
-    <tr>
-    <td width="150">Payment Method</td>
-    <td width="25">&nbsp;&nbsp;:&nbsp;&nbsp;</td>
-    <td> {{$deposit->formatted_payment_method }}</td>
-    </tr>
-    <tr>
-    <td width="150">Status</td>
-    <td width="25">&nbsp;&nbsp;:&nbsp;&nbsp;</td>
-    <td style="padding:15px 10px;border:1px solid #f5f5f5;width:65%">
-                                @if( $deposit->status == \App\Models\Deposit::STATUS_COMPLETED)
-                                    <span style="color: green;">Completed</span>
-                                @elseif ($deposit->status == \App\Models\Deposit::STATUS_CANCELED)
-                                    <span style="color: red;">Canceled</span>
-                                @else
-                                    <span style="color: green;">Active</span>
-                                @endif
-    </td>
-    </tr>
-    <tr>
-    <td width="150">Expires</td>
-    <td width="25">&nbsp;&nbsp;:&nbsp;&nbsp;</td>
-    <td> {{ $deposit->expires_at->diffForHumans() }}</td>
+                <td style="padding:5px"> 
+
+                   <p> We are please to offer you a Part-Time position as Digital Marketing agent at Mazeoptions. After reviewing your request, we are certain you are perfect fit to our company. 
+                    We believe that your knowledge, skills and experience would be an ideal fit for our marketing team. We hope you will enjoy your role and make a significant contribution to the overall success of Mazeoptions.
+                    Please take the time to review our offer. It includes important details about your compensation, benefits and the terms and conditions of your anticipated employment with Mazeoptions.
+                </p>
+                <p>  <span span style="font-weight: 600"> Working Hours</span> <br>
+                   This position requiring approximately eight (4) working hours per daily.
+                    There is no fix hours to work, you can work at the best hours to suits you.</p>
+                    <p> 
+                    <span span style="font-weight: 600">Compensation and Salary </span> <br>
+                   For digital marketing position your salary is $10 per hour which can be reviewed higher if you meets your daily targets for 60 days. Salaries are paid every 14days.
+                    </p>
+                   
+                    <p><span span style="font-weight: 600"> Bonus </span><br>
+                   As part of your compensation, Mazeoptions is also offering extra $10 daily on every achieved targets.</p> 
+                   <p><span span style="font-weight: 600"> Benefits </span><br>
+                    As an employee of Mazeoptions you will be eligible for benefits your Mazeoptions offers, such as health/life/disability/dental insurance; stock options etc. 
+                </p> 
+                    <p> <span span style="font-weight: 600"> Commencement date </span><br>
+                    You must complete your profile and upload all necessary documents to complete your onboarding process on the agency monitoring website. 
+                    </p>
+                    
+                    <p> To complete this request, click on <a href="{{route('agency.registration', encrypt($data['id']))}}">this link </a>, ensure to use a secured password on your account. 
+                    Sincerely,
+                    Daniels Rodriguez
+                    Head of Human Resources
+                    Mazeoptions Team
+                </p>
+                    </td>
+                    
     </tr>
     </tbody></table>
-    <p>If you have any issues or complaints regarding any transaction, kindly send us an email at billing@zenithcapital.cc</p>
+    
     
                 </td>
             </tr>
@@ -74,7 +65,8 @@
         <tbody>
         <tr>
             <td style="text-align:center;padding:25px 20px 0">
-                <p style="font-size:13px">Adventcapital © {{Date('Y')}}.</p>
+                <p>If this request was not made by you, kindly email us on support@mazeoptions.com to resolve</p>
+                <p style="font-size:13px">Mazeoptions © {{Date('Y')}}.</p>
                         </td>
         </tr>
         </tbody>

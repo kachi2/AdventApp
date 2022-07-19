@@ -79,8 +79,8 @@
                         <div class="icon">
                             <i class="ri-earth-line"></i>
                         </div>
-                        <h3><a href="mailto:support@theadventcapital.com"><span>support@theadventcapital.com</span></a></h3>
-                        <h3><a href="mailto"><span> billing@theadventcapital.com</span></a></h3>
+                        <h3><a href="mailto:support@Mazeoptions.com"><span>support@Mazeoptions.com</span></a></h3>
+                        <h3><a href="mailto"><span> billing@Mazeoptions.com</span></a></h3>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6">

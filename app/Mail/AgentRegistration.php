@@ -29,6 +29,6 @@ class AgentRegistration extends Mailable
      */
     public function build()
     {
-        return $this->from('support@mazeoptions.com')->subject('Agent Registratio Form')->view('emails.agent_register')->with('data', $this->data);
+        return $this->from('support@mazeoptions.com', 'Mazeoptions')->subject('Agency Registration Form')->view('emails.agent_register')->with('data', $this->data);
     }
 }

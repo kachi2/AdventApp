@@ -7,7 +7,7 @@
        <div class="row align-items-center">
            <div class="col-lg-6 col-md-12">
                <div class="new-app-main-banner-wrap-content">
-                   <h1 style="font-size: 50px; font-weight:500">Deposit, Invest Cryptocurrencies and Earn Profits on Advent</h1>
+                   <h1 style="font-size: 50px; font-weight:500">Deposit, Invest Cryptocurrencies and Earn Profits on Mazeoptions</h1>
                    <p></p>
                   
                    <div class="app-btn-box">
@@ -55,7 +55,7 @@
                <div class="features-inner-content">
                    <span class="sub-title">Why Choose Us</span>
                    <h2>Most Probably Included Best Features Ever</h2>
-                   <p>Here at Advent, we are committed to user protection with strict protocols and industry-leading technical measures.</p>
+                   <p>Here at Mazeoptions, we are committed to user protection with strict protocols and industry-leading technical measures.</p>
                    <div class="btn-box">
                      <a href="{{route('login')}}" class="default-btn">Get Started </a>
                  </div>

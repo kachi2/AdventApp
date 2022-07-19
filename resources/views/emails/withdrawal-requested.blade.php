@@ -63,7 +63,7 @@
     <tbody>
     <tr>
         <td style="text-align:center;padding:25px 20px 0">
-            <p style="font-size:13px">Adventcapital © {{Date('Y')}}.</p>
+            <p style="font-size:13px">Mazeoptions © {{Date('Y')}}.</p>
                     </td>
     </tr>
     </tbody>

@@ -98,7 +98,7 @@
                            
                             <p class="mb-0">
                                  
-            <p>This Privacy Notice describes how Mazeoptions collects and processes your personal information through the Mazeoptions websites and applications that reference this Privacy Notice. Mazeoptions refers to an ecosystem comprising Mazeoptions websites (whose domain names include but are not limited to www.theadventcapital.com/).
+            <p>This Privacy Notice describes how Mazeoptions collects and processes your personal information through the Mazeoptions websites and applications that reference this Privacy Notice. Mazeoptions refers to an ecosystem comprising Mazeoptions websites (whose domain names include but are not limited to www.Mazeoptions.com/).
                 This Privacy Policy applies to all platforms, websites, and departments of Mazeoptions and Mazeoptions Operators. By using Mazeoptions Services, you are consenting to the collection, storage, processing and transfer of your personal information as described in this Privacy Policy.
                </p>
             <p style="font-weight:bold">What Personal Information does Mazeoptions collect and process? Why does Mazeoptions process my personal information ?</p>
