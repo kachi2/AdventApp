@@ -42,7 +42,7 @@ return [
         ],
         'agent' => [
             'driver' => 'session',
-            'provider' => 'agent',
+            'provider' => 'agents',
         ],
 
         'api' => [
@@ -76,7 +76,7 @@ return [
             'model' => App\User::class,
         ],
 
-            'agent' => [
+            'agents' => [
                 'driver' => 'eloquent',
                 'model' => App\Agent::class,
             ],

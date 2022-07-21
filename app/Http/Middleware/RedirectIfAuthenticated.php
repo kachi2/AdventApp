@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Middleware;
 
 use Closure;
@@ -17,9 +16,18 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
+        switch($guard){
+            case "agent":
+                if (Auth::guard($guard)->check()) {
+                    return redirect('/agent/home');
+                }
+                break;
+            default:
         if (Auth::guard($guard)->check()) {
             return redirect('/home');
         }
+        break;
+    }
 
         return $next($request);
     }

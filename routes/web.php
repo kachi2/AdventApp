@@ -19,13 +19,19 @@ use Illuminate\Support\Facades\Route;
 Route::domain('agency.mazeoption.com')->group(function(){
 
     //Route::get('/agent/complete/registration', )
-    Route::get('/', 'Agency\HomeController@index')->name('agency.index');
-
     Route::get('/register/agents', 'Agency\AuthController@register')->name('agency.register');
     Route::post('/register/agent/', 'Agency\AuthController@registers')->name('agency.registers');
-    Route::get('/agency/registration/{id}', 'Agency\AuthController@CompleteRegistration')->name('agency.registration');
-    Route::get('/agency/completion/{id}', 'Agency\AuthController@AccountCompleted')->name('agency.AccountCompleted');
+    Route::get('/registration/{id}', 'Agency\AuthController@CompleteRegistration')->name('agency.registration');
+    Route::post('/completion/{id}', 'Agency\AuthController@AccountCompleted')->name('agency.AccountCompleted');
+    Route::get('/login', 'Agency\AuthController@Login')->name('Agent-login');
+    Route::post('/logins', 'Agency\AuthController@Logins')->name('agent.login');
+    Route::post('/logout', 'Agency\AuthController@logout')->name('agent.logout');
+  
+    Route::get('/', 'Agency\HomeController@index')->name('agency.index');
+    Route::get('/home', 'Agency\HomeController@index')->name('agency.index');
+    Route::get('index', 'Agency\HomeController@index')->name('agency.index');
     });
+  
 
 
     #========== end of agent routes ======================
@@ -45,6 +51,7 @@ Route::get('/contact', 'ContactController@index')->name('contact');
 Route::post('/contact/store', 'ContactController@store')->name('contact.store');
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 Route::get('withdrawals', 'WithdrawController@index')->name('withdrawals');
 Route::get('withdrawals/request', 'WithdrawController@request')->name('withdrawals.request');
 Route::post('withdrawals/request', 'WithdrawController@store')->name('withdrawals.request');

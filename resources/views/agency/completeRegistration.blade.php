@@ -16,54 +16,61 @@
                             <div class="card-body p-0">
                                 <ul class="nav-border nav nav-pills" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link active fw-semibold" data-bs-toggle="tab" href="#Register_Tab" role="tab">Complete Account Registration to access your Mazeoptions Agency Portal</a>
+                                        <a class="nav-link active fw-semibold" data-bs-toggle="tab" href="#Register_Tab" role="tab">Hello {{$agent->name}}, Complete your Account Registration to access your Mazeoptions Agency Portal</a>
                                     </li>
                                 </ul>
                                  <!-- Tab panes -->
                                 <div class="tab-content">
                                     <div class="tab-pane active px-3 pt-3" id="Register_Tab" role="tabpanel">
-                                        <form class="form-horizontal auth-form" action="{{route('agency.AccountCompleted')}}" method="post">
+                                        <form class="form-horizontal auth-form" action="{{route('agency.AccountCompleted', encrypt($agent->id))}}" method="post" enctype="multipart/form-data">
                                             @csrf
+                                            <div class="form-group mb-2">
+                                                <label class="form-label" for="useremail">Login Email</label>
+                                                <div class="input-group">                                                                                         
+                                                    <input type="email" class="form-control {{ form_invalid('password') }}" value="{{$agent->email}}" readonly>
+                                                    @showError('email')
+                                                </div>                                    
+                                            </div><!--end form-group-->
                                             <div class="form-group mb-2">
                                                 <label class="form-label" for="useremail">Account Password</label>
                                                 <div class="input-group">                                                                                         
                                                     <input type="password" class="form-control {{ form_invalid('password') }}" value="{{old('password')}}" name="password" placeholder="***************">
-                                                    @showError('email')
+                                                    @showError('password')
                                                 </div>                                    
                                             </div><!--end form-group-->
                                             <div class="form-group mb-2">
                                                 <label class="form-label" for="useremail">Confirm Password</label>
                                                 <div class="input-group">                                                                                         
                                                     <input type="password" class="form-control {{ form_invalid('password_confirmation') }}" value="{{old('password_confirmation')}}" name="password_confirmation" placeholder="***********">
-                                                    @showError('email')
+                                                    @showError('password_confirmation')
                                                 </div>                                    
                                             </div><!--end form-group-->
                                             <div class="form-group mb-2">
                                                 <label class="form-label" for="useremail">Address</label>
                                                 <div class="input-group">                                                                                         
-                                                    <input type="text" class="form-control {{ form_invalid('name') }}" value="{{old('name')}}" name="name" placeholder="Enter Full Address">
-                                                    @showError('email')
+                                                    <input type="text" class="form-control {{ form_invalid('name') }}" value="{{old('address')}}" name="address" placeholder="Enter Full Address">
+                                                    @showError('address')
                                                 </div>                                    
                                             </div><!--end form-group-->
                                             <div class="form-group mb-2">
                                                 <label class="form-label" for="useremail">State</label>
                                                 <div class="input-group">                                                                                         
-                                                    <input type="email" class="form-control {{ form_invalid('email') }}" value="{{old('email')}}" name="email" id="useremail" placeholder="Enter State">
+                                                    <input type="text" class="form-control {{ form_invalid('state') }}" value="{{old('state')}}" name="state" placeholder="Enter State">
                                                     @showError('email')
                                                 </div>                                    
                                             </div><!--end form-group-->
                                             <div class="form-group mb-2">
                                                 <label class="form-label" for="mo_number">Country</label>                                            
                                                 <div class="input-group">                                 
-                                                    <input type="text" class="form-control {{ form_invalid('phone')}}" name="phone" value="{{old('phone')}}" id="mo_number" placeholder="Enter Country">
-                                                    @showError('phone')
+                                                    <input type="text" class="form-control {{ form_invalid('country')}}" name="country" value="{{old('country')}}" id="mo_number" placeholder="Enter Country">
+                                                    @showError('country')
                                                 </div>                               
                                             </div><!--end form-group-->  
                                             <div class="form-group mb-2">
                                                 <label class="form-label" for="mo_number">Upload any Valid ID</label>                                            
                                                 <div class="input-group">                                 
                                                     <input type="file" class="form-control {{ form_invalid('image')}}" name="image"  id="mo_number">
-                                                    @showError('phone')
+                                                    @showError('image')
                                                 </div>                               
                                             </div><!--end form-group-->  
                                             <div class="form-group mb-0 row">
