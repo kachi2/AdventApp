@@ -9,8 +9,10 @@ use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use App\Agent;
+use App\AgentActivity;
 use Illuminate\Support\Facades\Mail;
 class AuthController extends Controller
 {
@@ -120,6 +122,17 @@ class AuthController extends Controller
    // dd($credentials);
    //dd(auth::guard('agent'));
     if(Auth::guard('agent')->attempt($credentials)){
+        agent_user()->update([
+            'last_login' => Carbon::now()->toDateTimeString(),
+            'login_ip'  => $req->getClientIp(),
+            'login_counts' => agent_user()->login_counts + 1
+        ]);
+        AgentActivity::create([
+            'agent_id' => agent_user()->id,
+            'last_login' => Carbon::now()->toDateTimeString(),
+            'browser' => $req->userAgent(),
+            'login_ip' => $req->Ip(),
+        ]);
         return redirect()->route('agency.index');
     }else{
         return redirect()->back()->withInput($req->all())->withErrors($valid);

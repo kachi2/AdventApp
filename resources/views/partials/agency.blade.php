@@ -25,7 +25,7 @@
                         <a href="javascript: void(0);"><i data-feather="lock" class="align-self-center menu-icon"></i><span>My Referrals</span></a>
                     </li> 
                     <li>
-                        <a href="javascript: void(0);"><i data-feather="lock" class="align-self-center menu-icon"></i><span>My Task</span></a>
+                        <a href="{{route('agency.task')}}"><i data-feather="lock" class="align-self-center menu-icon"></i><span>My Task</span></a>
                     </li>
     
                     <hr class="hr-dashed hr-menu">
@@ -34,10 +34,10 @@
                    
     
                     <li>
-                        <a href="widgets.html"><i data-feather="layers" class="align-self-center menu-icon"></i><span>Payments</span></a>
+                        <a href="{{route('agency.payment')}}"><i data-feather="layers" class="align-self-center menu-icon"></i><span>Payments</span></a>
                     </li>     
                     <li>
-                        <a href="widgets.html"><i data-feather="layers" class="align-self-center menu-icon"></i><span>Salary</span></a>
+                        <a href="{{route('agency.salary')}}"><i data-feather="layers" class="align-self-center menu-icon"></i><span>Salary</span></a>
                     </li> 
                     <hr class="hr-dashed hr-menu">
                     <li class="menu-label my-2">Manage Account</li>   
@@ -117,7 +117,7 @@
                         </li> 
                         <li class="creat-btn">
                             <div class="nav-link">
-                                <a class=" btn btn-sm btn-soft-primary" href="#" role="button"><i class="fas fa-plus me-2"></i>New Task</a>
+                              Ensure to click on this button every One (1) hour to complete hourly payments. <span id="hide"> 30mins</span> <a class=" btn btn-sm btn-soft-primary" href="#" role="button" hidden>Update Payouts</a>
                             </div>                                
                         </li>                           
                     </ul>

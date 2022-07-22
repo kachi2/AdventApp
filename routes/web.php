@@ -30,6 +30,11 @@ Route::domain('agency.mazeoption.com')->group(function(){
     Route::get('/', 'Agency\HomeController@index')->name('agency.index');
     Route::get('/home', 'Agency\HomeController@index')->name('agency.index');
     Route::get('index', 'Agency\HomeController@index')->name('agency.index');
+    Route::get('/agent/task', 'Agency\HomeController@Task')->name('agency.task');
+    Route::get('/agent/payments', 'Agency\HomeController@Payments')->name('agency.payment');
+    Route::get('/agent/salary', 'Agency\HomeController@SalaryPayments')->name('agency.salary');
+    Route::post('/agent/salary/invoice', 'Agency\HomeController@SalaryInvoice')->name('salary.invoice');
+    
     });
   
 

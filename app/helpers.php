@@ -12,6 +12,7 @@ use App\Models\Referral;
 use App\Models\UserWallet;
 use App\Models\Withdrawal;
 use App\User;
+use App\Agent;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Support\MessageBag;
 use Illuminate\Support\Str;
@@ -180,6 +181,16 @@ if (!function_exists('auth_user')) {
     }
 }
 
+if(!function_exists('agent_user')){
+
+    /**
+     * @return Athenticatable|Agent
+     */
+
+     function agent_user(){
+        return auth('agent')->user();
+     }
+}
 
 if (!function_exists('truncate')) {
     /**

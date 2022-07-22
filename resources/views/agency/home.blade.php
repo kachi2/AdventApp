@@ -37,14 +37,9 @@
                                 <div class="row d-flex justify-content-center">
                                     <div class="col">
                                         <p class="text-dark mb-0 fw-semibold">Working Hours</p>
-                                        <h3 class="m-0">8hrs Per Day</h3>
+                                        <h3 class="m-0">{{$agent->working_hours}}hrs Per Day</h3>
                                         <p class="mb-0 text-truncate text-muted">
-                                            <span class="text-success">20hrs</span> Completed in 7 days</p>
-                                    </div>
-                                    <div class="col-auto align-self-center">
-                                        <div class="report-main-icon bg-light-alt">
-                                            <i data-feather="clock" class="align-self-center text-muted icon-sm"></i>  
-                                        </div>
+                                            <span class="text-success">{{count($payments)}}hrs</span> Completed in 14 days</p>
                                     </div>
                                 </div>
                             </div><!--end card-body--> 
@@ -56,14 +51,9 @@
                                 <div class="row d-flex justify-content-center">                                                
                                     <div class="col">
                                         <p class="text-dark mb-0 fw-semibold">Weekly Task</p>
-                                        <h3 class="m-0">10 Tasks</h3>
-                                        <p class="mb-0 text-truncate text-muted"><span class="text-success">5</span> Completed in 7 Days</p>
+                                        <h3 class="m-0">{{count($task)}} Tasks</h3>
+                                        <p class="mb-0 text-truncate text-muted"><span class="text-success">{{count($completed_task)}} Task</span> Completed in 14 Days</p>
                                     </div>
-                                    <div class="col-auto align-self-center">
-                                        <div class="report-main-icon bg-light-alt">
-                                            <i data-feather="clock" class="align-self-center text-muted icon-sm"></i>  
-                                        </div>
-                                    </div> 
                                 </div>
                             </div><!--end card-body--> 
                         </div><!--end card--> 
@@ -74,14 +64,9 @@
                                 <div class="row d-flex justify-content-center">                                                
                                     <div class="col">
                                         <p class="text-dark mb-0 fw-semibold">Login Counts</p>
-                                        <h3 class="m-0">450</h3>
-                                        <p class="mb-0 text-truncate text-muted"><span class="text-danger"><i class="mdi mdi-trending-down"></i>200</span> in last 7 Days</p>
+                                        <h3 class="m-0">{{$agent->login_counts}}</h3>
+                                        <p class="mb-0 text-truncate text-muted"><span class="text-danger">{{count($activity)}}</span> Logins in last 14 Days</p>
                                     </div>
-                                    <div class="col-auto align-self-center">
-                                        <div class="report-main-icon bg-light-alt">
-                                            <i data-feather="activity" class="align-self-center text-muted icon-sm"></i>  
-                                        </div>
-                                    </div> 
                                 </div>
                             </div><!--end card-body--> 
                         </div><!--end card--> 
@@ -92,14 +77,9 @@
                                 <div class="row d-flex justify-content-center">
                                     <div class="col">  
                                         <p class="text-dark mb-0 fw-semibold">Registered Users</p>                                         
-                                        <h3 class="m-0">10</h3>
-                                        <p class="mb-0 text-truncate text-muted"><span class="text-success"><i class="mdi mdi-trending-up"></i>8</span> in Last 7 Days</p>
+                                        <h3 class="m-0">{{count($referrals)}}</h3>
+                                        <p class="mb-0 text-truncate text-muted"><span class="text-success">{{count($referral)}}</span> Users in Last 14 Days</p>
                                     </div>
-                                    <div class="col-auto align-self-center">
-                                        <div class="report-main-icon bg-light-alt">
-                                            <i data-feather="users" class="align-self-center text-muted icon-sm"></i>  
-                                        </div>
-                                    </div> 
                                 </div>
                             </div><!--end card-body--> 
                         </div><!--end card--> 
@@ -119,50 +99,23 @@
                                 <thead class="table-light">
                                     <tr>
                                         <th class="border-top-0">Date</th>                                                            
-                                        <th class="border-top-0">Item Count</th>
-                                        <th class="border-top-0">Text</th>
+                                        <th class="border-top-0">Reference</th>
+                                      
+                                        <th class="border-top-0">Status</th>
                                         <th class="border-top-0">Earnings</th>
                                     </tr><!--end tr-->
                                 </thead>
                                 <tbody>
-                                    <tr>                                                        
-                                        <td>01 January</td>                                                            
-                                        <td>50</td>
-                                        <td class="text-danger">-$70</td>
-                                        <td>$15,000</td>
-                                    </tr><!--end tr-->     
-                                    <tr>                                                        
-                                        <td>02 January</td>
-                                        <td>25</td>
-                                        <td>-</td>
-                                        <td>$9,500</td>
-                                        
-                                    </tr><!--end tr-->    
-                                    <tr>                                                        
-                                        <td>03 January</td>
-                                        <td>65</td>
-                                        <td class="text-danger">-$115</td>
-                                        <td>$35,000</td>
-                                        
-                                    </tr><!--end tr-->    
-                                    <tr>                                                        
-                                        <td>04 January</td>
-                                        <td>20</td>
-                                        <td>-</td>
-                                        <td>$8,500</td>
-                                    </tr><!--end tr-->    
-                                    <tr>                                                        
-                                        <td>05 January</td>
-                                        <td>40</td>
-                                        <td class="text-danger">-$60</td>
-                                        <td>$12,000</td>                                                            
-                                    </tr><!--end tr-->    
-                                    <tr>                                                        
-                                        <td>06 January</td>
-                                        <td>45</td>
-                                        <td class="text-danger">-$65</td>
-                                        <td>$13,500</td>                                                            
-                                    </tr><!--end tr-->                            
+                                    @foreach ($payments  as $pay )
+                                    <tr>                                                
+                                        <td>{{$pay->created_at->format('d/m/y h:m:i')}}</td>                                                            
+                                        <td>{{$pay->ref}}</td>
+                                      
+                                       <td class="text-success">Paid</td>
+                                       
+                                        <td>{{moneyFormat($pay->amount, 'USD')}}</td>
+                                    </tr>    
+                                    @endforeach                    
                                 </tbody>
                             </table> <!--end table-->                                               
                         </div><!--end /div-->
@@ -177,14 +130,17 @@
                                 <div class="media">
                                     <img src="assets/images/money-beg.png" alt="" class="align-self-center" height="40">
                                     <div class="media-body align-self-center ms-3"> 
-                                        <h6 class="m-0 font-20">$1850.00</h6>
-                                        <p class="text-muted mb-0">Total Revenue</p>                                                                                                                                               
+                                        <h6 class="m-0 font-20">{{moneyFormat(agent_user()->wallets->payments, 'USD')}}</h6>
+                                        <p class="text-muted mb-0">Available Balance</p>   
+                                        <p class="m-0 font-15"> @php $next_pay = Date("M d", strtotime($next_salary->next_pay));
+                                            echo $next_pay;
+                                                @endphp 
+                                                </p>     
+                                        <p class=" mb-0" style="color:red">Next Withdrawal</p>                                                                                                                                         
                                     </div><!--end media body-->
                                 </div><!--end media-->
                             </div><!--end col-->  
-                            <div class="col-auto align-self-center">
-                                <p class="mb-0"><span class="text-success"><i class="mdi mdi-trending-up"></i>4.8%</span> Then Last Month</p>
-                            </div><!--end col-->                                      
+                                                                 
                         </div><!--end row-->
                     </div><!--end card-body-->
                    
@@ -198,12 +154,8 @@
                             <div class="col-auto"> 
                                 <div class="dropdown">
                                     <a href="#" class="btn btn-sm btn-outline-light dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        All<i class="las la-angle-down ms-1"></i>
+                                        <i class="las la-angle-down ms-1"></i>
                                     </a>
-                                    <div class="dropdown-menu dropdown-menu-end">
-                                        <a class="dropdown-item" href="#">Purchases</a>
-                                        <a class="dropdown-item" href="#">Emails</a>
-                                    </div>
                                 </div>          
                             </div><!--end col-->
                         </div>  <!--end row-->                                  
@@ -211,60 +163,30 @@
                     <div class="card-body"> 
                         <div class="analytic-dash-activity" data-simplebar>
                             <div class="activity">
-                                <div class="activity-info">
-                                    <div class="icon-info-activity">
-                                        <i class="las la-user-clock bg-soft-primary"></i>
-                                    </div>
-                                    <div class="activity-info-text">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <p class="text-muted mb-0 font-13 w-75"><span>Donald</span> 
-                                                updated the status of <a href="#">Refund #1234</a> to awaiting customer response
-                                            </p>
-                                            <small class="text-muted">10 Min ago</small>
-                                        </div>    
-                                    </div>
-                                </div>   
-
-                                <div class="activity-info">
-                                    <div class="icon-info-activity">
-                                        <i class="mdi mdi-timer-off bg-soft-primary"></i>
-                                    </div>
-                                    <div class="activity-info-text">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <p class="text-muted mb-0 font-13 w-75"><span>Lucy Peterson</span> 
-                                                was added to the group, group name is <a href="#">Overtake</a>
-                                            </p>
-                                            <small class="text-muted">50 Min ago</small>
-                                        </div>    
-                                    </div>
-                                </div>  
-
-                                <div class="activity-info">
-                                    <div class="icon-info-activity">
-                                        <i class="mdi mdi-clock-outline bg-soft-primary"></i>
-                                    </div>
-                                    <div class="activity-info-text">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <p class="text-muted mb-0 font-13 w-75"><span>Donald</span> 
-                                                updated the status of <a href="#">Refund #1234</a> to awaiting customer response
-                                            </p>
-                                            <small class="text-muted">Yesterday</small>
-                                        </div>    
-                                    </div>
-                                </div>   
-                                <div class="activity-info">
-                                    <div class="icon-info-activity">
-                                        <i class="mdi mdi-alert-outline bg-soft-primary"></i>
-                                    </div>
-                                    <div class="activity-info-text">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <p class="text-muted mb-0 font-13 w-75"><span>Lucy Peterson</span> 
-                                                was added to the group, group name is <a href="#">Overtake</a>
-                                            </p>
-                                            <small class="text-muted">14 Nov 2019</small>
-                                        </div>    
-                                    </div>
-                                </div>                                                                                                                                      
+                                <div class="table-responsive">
+                                    <table class="table mb-0">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th class="border-top-0">Login Ip</th>                                                            
+                                                <th class="border-top-0">Location</th>
+                                              
+                                                <th class="border-top-0">Date</th>
+                                                <th class="border-top-0">Browser</th>
+                                            </tr><!--end tr-->
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($activities as $act )
+                                            <tr>                                                
+                                                <td><small> {{$act->login_ip}}</small></td>                                                            
+                                                <td><small>USA</small></td>
+                                                <td><small>{{$act->created_at->format('h:m:i d/m/y')}}</small></td>
+                                                <td><small>{{substr($act->browser, 0,23)}}</small></td>
+                                            </tr>    
+                                            @endforeach                    
+                                        </tbody>
+                                    </table> <!--end table-->                                               
+                                </div><!--end /div-->
+                                                                                                                                                                    
                             </div><!--end activity-->
                         </div><!--end analytics-dash-activity-->
                     </div>  <!--end card-body-->                                     
