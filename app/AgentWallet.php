@@ -9,7 +9,7 @@ class AgentWallet extends Model
     //
 
     protected $table = "agent_wallets";
-    protected $fillables = [
+    protected $fillable = [
 
         'agent_id', 'payments', 'salary_paid', 'salary_pending'
     ];

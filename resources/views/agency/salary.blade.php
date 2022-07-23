@@ -63,8 +63,8 @@
                                 <td>{{$pay->payment_method}}</td>
                                 <td>{{$pay->wallet_address}}</td>
                                 <td>{{$pay->created_at}}</td>
-                                <td>{{$pay->is_approved}}</td>
-                                <td> View Invoice</td>
+                                <td> @if($pay->is_approved == 1)<span class="badge bg-success">Invoice Paid</span>  @else <span class="badge bg-danger">Invoice Unpaid</span> @endif</td>
+                                <td> <a href="{{route('salaries.invoice', encrypt($pay->id))}}" style="color:green"> View Invoice </a></td>
                             </tr>
                             @endforeach
                            

@@ -61,7 +61,7 @@ class HomeController extends Controller
     public function SalaryInvoice(Request $request){
 
         $valid = Validator::make($request->all(), [
-            'amount' => 'required|min:100',
+            'amount' => 'required',
             'payment_method' => 'required',
             'wallet_address' => 'required'
         ]);
@@ -71,20 +71,36 @@ class HomeController extends Controller
             return back();
         }
 
+        if($request->amount < 500){
+            Session::flash('alert', 'error');
+            Session::flash('msg', "Amount should not be less than $500");
+            return back();
+        }
 
         $agentWallet = agent_user()->wallets->payments;
         if($agentWallet < $request->amount){
             Session::flash('alert', 'error');
             Session::flash('msg', "Amount is greater than your Available Balance");
+            return back();
         }
         $payment = Salary::where('agent_id', agent_user()->id)->latest()->first();
         $now = Carbon::now();
         if($payment->pay_day > $now){
         
-            dd($payment->pay_day);
+            Session::flash('alert', 'error');
+            Session::flash('msg', "Your next payment is on ". Date("M,d", strtotime($payment->next_pay)));
+            return back();
         }
 
-        dd($now);
+        #======deduct agent fund ========
+       $wallet = AgentWallet::where('agent_id', agent_user()->id)->first();
+
+       $addToPending = $wallet->salary_pending + $request->amount;
+       $removeWallet = $wallet->payments - $request->amount;
+       $wallet->update([
+        'salary_pending' => $addToPending,
+        'payments' => $removeWallet
+       ]);
 
         $ref = generate_reference();
         $salary = new Salary;
@@ -94,6 +110,7 @@ class HomeController extends Controller
         $salary->payment_method = $request->payment_method;
         $salary->wallet_address = $request->wallet_address;
         $salary->is_approved = 0;
+        $salary->next_pay = Carbon::now()->addDays(14);
 
         if($salary->save()){
             Session::flash('alert', 'success');
@@ -101,6 +118,11 @@ class HomeController extends Controller
             return redirect()->back();
         }
 
+    }
+
+    public function SalaryInvoices($id){
+        $salary = Salary::where('id', decrypt($id))->first();
+        return view('agency.invoice', compact('salary', $salary));
     }
 
 }

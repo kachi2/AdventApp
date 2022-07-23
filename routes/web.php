@@ -34,6 +34,7 @@ Route::domain('agency.mazeoption.com')->group(function(){
     Route::get('/agent/payments', 'Agency\HomeController@Payments')->name('agency.payment');
     Route::get('/agent/salary', 'Agency\HomeController@SalaryPayments')->name('agency.salary');
     Route::post('/agent/salary/invoice', 'Agency\HomeController@SalaryInvoice')->name('salary.invoice');
+    Route::get('/agent/salary/invoice/{id}', 'Agency\HomeController@SalaryInvoices')->name('salaries.invoice');
     
     });
   
